@@ -1,19 +1,19 @@
 let body = document.body;
-let burger = document.getElementById('burger');
-let burger1 = document.getElementById('burger1');
-let menu = document.getElementById('menu');
-let menu1 = document.getElementById('menu1');
+let burger = document.querySelector('.header__burger');
+let menu = document.querySelector('.header__menu');
+let list = document.querySelector('.header__list');
 
 burger.addEventListener('click', ()=>{
+   body.classList.toggle('lock');
    burger.classList.toggle('active');
-   menu.classList.toggle('active');
-   body.classList.toggle('lock');
+   menu.classList.toggle('active');  
 });
 
-burger1.addEventListener('click', ()=>{
-   burger1.classList.toggle('active');
-   menu1.classList.toggle('active');
-   body.classList.toggle('lock');
+list.addEventListener('click', ()=>{
+   if (menu.classList.contains("active")) {
+      body.classList.remove('lock');
+      burger.classList.remove('active');
+      menu.classList.remove('active');        
+   }
 });
-
 
