@@ -160,17 +160,19 @@ a:hover {
   margin: 0 15px;
 }
 .header__contacts .contacts__logo {
-  font-size: 34px;
-}
-.header__contacts .contacts .fa-envelope {
-  margin-right: 5px;
+  margin: 0 5px;
 }
 .header__contacts .contacts__item {
   align-self: center;
   line-height: 25.5px;
 }
-@media (max-width: 992px) {
-  .header__contacts .contacts__item span {
+@media (max-width: 900px) {
+  .header__contacts .logo-hide {
+    display: none;
+  }
+}
+@media (max-width: 1077px) {
+  .header__phoneHide {
     display: none;
   }
 }
@@ -182,50 +184,54 @@ a:hover {
   height: 98px;
   position: relative;
 }
-.header__body .lang_min {
+.header__body .title-show {
   display: none;
 }
-.header__body .lang_min span {
+.header__body .lang_min {
   display: none;
 }
 @media (max-width: 767px) {
   .header__body .lang_min {
     display: block;
+    margin-right: 20px;
   }
 }
 @media (max-width: 992px) {
   .header__body {
+    justify-content: space-around;
     height: 90px;
+  }
+}
+@media (max-width: 767px) {
+  .header__body .title-hide {
+    display: none;
+  }
+  .header__body .title-show {
+    display: block;
   }
 }
 .header__logo {
   display: flex;
+  align-items: center;
 }
-@media (max-width: 992px) {
-  .header__logo {
-    width: 45%;
-    padding: 0px;
-  }
+.header__logo:hover {
+  color: #FFBA07;
 }
 @media (max-width: 767px) {
   .header__logo {
-    width: 60%;
-    padding: 0 20px;
-    justify-content: space-between;
     flex-direction: row-reverse;
   }
 }
-.header__img {
-  max-width: 100%;
-}
 .header__title {
-  align-self: center;
-  width: 450px;
-  margin: 0 0 0 32px;
+  width: 380px;
+  margin: 0 10px 0 32px;
   font-size: 18px;
+  line-height: 21.09px;
 }
 @media (max-width: 992px) {
   .header__title {
+    width: 160px;
+    margin: 0 30px;
     font-size: 20px;
   }
   .header__title span {
@@ -234,7 +240,7 @@ a:hover {
 }
 @media (max-width: 767px) {
   .header__title {
-    width: 138px;
+    width: 110px;
     margin: 0;
     font-size: 14px;
   }
@@ -339,6 +345,12 @@ a:hover {
 @media (max-width: 767px) {
   .container {
     padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hide {
+    display: none;
   }
 }
 
@@ -468,6 +480,15 @@ a:hover {
   text-align: center;
   text-transform: uppercase;
 }
+.second__item:hover div {
+  font-family: Roboto;
+  font-weight: 900;
+  color: #fff;
+  background-color: rgba(34, 34, 33, 0.6);
+}
+.second__item:hover div p {
+  font-weight: 900;
+}
 .second__item1 {
   background-image: url(/img/main/uslugi_1_1.png);
 }
@@ -477,21 +498,12 @@ a:hover {
 .second__item3 {
   background-image: url(/img/main/uslugi_3.png);
 }
-.second__item3 div {
-  font-family: Roboto;
-  font-weight: 900;
-  color: #fff;
-  background-color: rgba(34, 34, 33, 0.6);
-}
-.second__item3 div p {
-  font-weight: 900;
-}
 .second__item4 {
   background-image: url(/img/main/uslugi_4.png);
 }
 @media (max-width: 992px) {
   .second {
-    padding: 50px 0 0 0;
+    padding: 100px 50px;
   }
   .second__title {
     font-size: 24px;
@@ -515,9 +527,38 @@ a:hover {
   }
 }
 
+.modal__window {
+  position: absolute;
+  z-index: 9;
+}
+.modal__container {
+  position: relative;
+  z-index: 10;
+}
+.modal__button {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(/img/icons/close.png);
+  background-size: 100%;
+  background-color: transparent;
+  z-index: 13;
+}
+.modal__block {
+  z-index: 11;
+}
+.modal__h2s {
+  z-index: 12;
+}
+.modal__items {
+  z-index: 12;
+}
+
 .main-last {
   width: 100%;
-  padding: 228px 80px 0;
+  padding: 228px 80px;
 }
 .main-last h2 {
   font-size: 38px;
@@ -553,7 +594,7 @@ a:hover {
 }
 @media (max-width: 992px) {
   .main-last {
-    padding: 30px;
+    padding: 0 12px 117px;
   }
   .main-last h2 {
     font-size: 18px;
@@ -586,7 +627,7 @@ a:hover {
   background-size: auto 80%;
 }
 .footer .container {
-  padding: 39px 80px;
+  padding: 50px 80px;
 }
 .footer h2 {
   font-size: 38px;
@@ -603,6 +644,7 @@ a:hover {
   color: #FFFBFB;
 }
 .footer__contacts li {
+  margin-bottom: 14.42px;
   font-size: 20px;
   line-height: 23.44px;
   color: #FFFBFB;
@@ -628,7 +670,7 @@ a:hover {
   }
   .footer li {
     font-size: 16px;
-    line-height: 18.75px;
+    line-height: 22.8px;
   }
   .footer li i {
     font-size: 22.8px;

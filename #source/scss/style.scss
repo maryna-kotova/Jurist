@@ -74,26 +74,33 @@ a {
         .contacts {
             display: flex;
             margin: 0 15px;
-
-            &__logo {
-                font-size: 34px;
-            }
-
-            .fa-envelope {
-                margin-right: 5px;
+            &__logo {              
+                margin: 0 5px;
             }
 
             &__item {
                 align-self: center;
                 line-height: 25.5px;
-                @media (max-width: 992px){
-                    span{
-                        display: none;
-                    }
-                }
+                // @media (max-width: 992px){
+                //     span{
+                //         display: none;
+                //     }
+                // }
             }
         }
-    }    
+        .logo-hide{
+            @media (max-width: 900px){                  
+                display: none;                  
+            } 
+        }
+ 
+    }
+    &__phoneHide{
+        @media (max-width: 1077px){  
+            display: none;
+           
+        }
+    }   
 	&__body {
         display: flex;
         justify-content: space-between;
@@ -101,49 +108,70 @@ a {
         width: 100%;
         height: 98px;
         position: relative;
-        // z-index: 2;
+        .title-show{
+            display: none;
+        }      
         .lang_min{
             display: none;
-            span{
-                display: none;
-            }
+            // span{
+            //     display: none;
+            // }
             @media (max-width: 767px){
                 display: block;
+                margin-right: 20px;
             }
         }
         @media (max-width: 992px){ 
+            justify-content: space-around;
             height: 90px;
         }
-	}
-	&__logo { 
-        display: flex;
-        @media (max-width: 992px){
-            width: 45%;     
-            padding: 0px;
-        }
         @media (max-width: 767px){
-            width: 60%;
-            padding: 0 20px;
-            justify-content: space-between;
+            
+            .title-hide{
+                display: none;
+            }
+            .title-show{
+                display: block;
+            }
+        } 
+	}
+	&__logo {  
+        display: flex; 
+        align-items: center;
+        &:hover{
+            color: $color_yel;
+        }
+        // @media (max-width: 992px){
+        //     width: 45%;     
+        //     padding: 0px;
+        // }
+        @media (max-width: 767px){
+        //     width: 60%;
+        //     padding: 0 20px;
+        //     justify-content: space-between;
             flex-direction: row-reverse;
         }
 	}
 	&__img {
-        max-width: 100%;
+        
 	}
-	&__title {
-        align-self: center;
-        width: 450px;
-        margin: 0 0 0 32px;
+	&__title {       
+        width: 380px;
+        margin: 0 10px 0 32px;
         font-size: 18px;
+        line-height: 21.09px;       
+
         @media (max-width: 992px){
+            //flex-grow ---------------------!!!!!!!
+            width: 160px;
+            margin: 0 30px;
             font-size: 20px;
             span{
                 display: none;
             }
         }
         @media (max-width: 767px){
-            width: 138px;
+            width: 110px;
             margin: 0;
             font-size: 14px;
         }
@@ -252,6 +280,11 @@ a {
     padding: 0 80px;
     @media (max-width: 767px){
         padding: 0;
+    }
+}
+.hide{
+    @media (max-width: 767px){          
+        display: none;
     }
 }
 
@@ -379,7 +412,19 @@ a {
                 text-align: center;
                 text-transform: uppercase;
             }
-        }        
+        }
+        &:hover{
+            div{
+                font-family: Roboto;
+                font-weight: 900;
+                color: #fff;
+                background-color:rgba(34, 34, 33, 0.6);
+                p{
+                    font-weight: 900;
+                }
+            }
+        } 
+               
     }
 	&__item1 {
         background-image: url(/img/main/uslugi_1_1.png);
@@ -389,21 +434,12 @@ a {
 	}
 	&__item3 {
         background-image: url(/img/main/uslugi_3.png);
-        div{
-            font-family: Roboto;
-            font-weight: 900;
-            color: #fff;
-            background-color:rgba(34, 34, 33, 0.6);
-            p{
-                font-weight: 900;
-            }
-        }
 	}
 	&__item4 {
         background-image: url(/img/main/uslugi_4.png);
     }
     @media (max-width: 992px){
-        padding: 50px 0 0 0;
+        padding: 100px 50px;
         &__title{
             font-size: 24px;
             line-height: 30px;
@@ -421,7 +457,7 @@ a {
             } 
         }
     }
-    @media (max-width: 767px){
+    @media (max-width: 767px){       
         &__title{
             font-size: 18px;
             line-height: 21.09px;
@@ -430,9 +466,48 @@ a {
     }
 }
 
+.modal {
+
+    &__window {
+        position: absolute;
+        // display: none;
+        z-index: 9;
+    }
+
+    &__container{
+        position: relative;
+        z-index: 10;
+    }
+
+    &__button {
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url(/img/icons/close.png);
+        background-size: 100%;
+        background-color: transparent;
+        z-index: 13;
+    }
+
+    &__block {
+        // display: none;
+        z-index: 11;
+    }
+
+    &__h2s {
+        z-index: 12;
+    }
+
+    &__items {
+        z-index: 12;
+    }
+}
+
 .main-last {
     width: 100%;
-    padding: $section_padding;
+    padding: 228px 80px;
 
     h2 {
         font-size: 38px;
@@ -472,7 +547,7 @@ a {
         }
     }
     @media (max-width: 992px){
-        padding: 30px;
+        padding: 0 12px 117px;
         h2 {
             font-size: 18px;
             line-height: 21.09px;
@@ -512,8 +587,9 @@ a {
     background-repeat: no-repeat;
     background-position: 100% 50%;
     background-size:  auto 80%;
+    
     .container{
-        padding: 39px 80px;
+        padding: 50px 80px;
         // position: relative;
     }
 
@@ -534,6 +610,7 @@ a {
         }
 
         li {
+            margin-bottom: 14.42px;
             font-size: 20px;
             line-height: 23.44px;
             color: $color_text_1sect;
@@ -558,7 +635,8 @@ a {
         }
         li{
             font-size: 16px;
-            line-height: 18.75px;
+            line-height: 22.8px;
+            
             i{
                 font-size: 22.8px;
                 // width: 22.8px;
