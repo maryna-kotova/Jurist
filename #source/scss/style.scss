@@ -295,86 +295,77 @@ a {
     text-align: center;
 }
 
-.first { 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; 
-    width: 100%;
-    height: 577px;
+.first {
+    width: 100%;  
+    height: 577px; 
     margin-top: 129px; 
-    background-color: $color_bg_1sect;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    &__shadow{       
-        width: 40%;
-        height: 100%;       
-        background-color: $color_bg_1sect;
-        box-shadow: 1px 1px 500px 400px $color_bg_1sect;        
-        z-index: 3;             
+    background-color: $color_bg_1sect; 
+    background-image: url(/img/main/bg-1.png);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;  
+
+    &__bg{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; 
+        width: 100%;
+        height: 100%;
+    } 
+
+    &__text {        
+        width: 640px;          
+        margin: 107px 0 112px 188px;        
     }
-    &__text {
-        display: block;
-        width: 650px;   
-        height: 358px; 
-        margin: 107px 0 112px 188px;          
+
+    &__content {
         font-size: 30px;
         line-height: 40.8px;
-        color: $color_text_1sect; 
-        z-index: 4;
-        position: absolute;       
+        color: $color_text_1sect;  
     }
 
     &__item {
         text-transform: uppercase;
         color: $color_yel;
     }
-
-    &__img{
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 2;
-    }
-    @media (max-width: 992px){
-        height: 500px;           
+    @media (max-width: 992px){                 
         &__text{
             width: 540px;
             margin-left: 130px;  
         }
     }
-    @media (max-width: 767px){
-        justify-content: center;
-        height: auto;
-        margin-top: 69px;
-        padding: 23px 0;
-        background-color: black;
-        &__shadow{
-            display: none;
+    @media (max-width: 767px){        
+        height: 250px;
+        margin-top: 69px;   
+        background-color: #0f0e0e;            
+        background-image: url(/img/main/bg-2.png);
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;  
+
+        &__bg{
+            justify-content: center;
+            padding: 23px 0; 
+            background-color: rgba(0, 0, 0, 0.6);
         }
+        
         &__text{
             display: flex;
             align-items: center;
-            width: 311px;            
-            height: 100%;
+            width: 311px;   
             margin: 0;
-            text-align: center;
+            text-align: center;          
+        }
+        &__content {
             font-size: 18px;
-            line-height: 22.95px;          
-            
-            background-color: rgba(0, 0, 0, 0.6);
+            line-height: 22.95px;  
+            color: $color_text_1sect;  
         }
         &__hide {
             display: none;
         }
-        &__img{                          
-            width: 289px;
-            height: 214px; 
-            position: static;           
-        }
     }
 }
+
 
 .second {
     width: 100%;
@@ -600,15 +591,24 @@ a {
             flex-direction: column;
             align-items: center;
             width: 402px;
-            margin-bottom: 40px;
+            margin-bottom: 4rem;
 
             img {
                 width: 100px;
                 height: 100px;
                 margin-bottom: 1rem;
             }
+            .last-icon1{
+                width: 90px;
+                height: 90px;
+            }
+            .last-icon2{}
+            .last-icon3{
+                width: 110px;
+                height: 110px;
+            }
 
-            p {
+            p {               
                 font-size: 26px;
                 font-weight: 400;
                 line-height: 30.47px;
@@ -617,7 +617,7 @@ a {
         }
     }
     @media (max-width: 992px){
-        padding: 0 12px 117px;
+        padding: 0 12px 50px;
         h2 {
             font-size: 18px;
             line-height: 21.09px;
@@ -632,11 +632,20 @@ a {
        
             figure {
                 width: 210px;
-                margin-bottom: 20px;
+                margin-bottom: 3rem;
                 img {
                     width: 74.69px;
                     height: 74.69px;
                     margin-bottom: 1rem;
+                }
+                .last-icon1{
+                    width: 60px;
+                    height: 60px;
+                }
+                .last-icon2{}
+                .last-icon3{
+                    width: 100px;
+                    height: 100px;
                 }
 
                 p {
