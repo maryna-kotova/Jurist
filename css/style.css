@@ -162,7 +162,7 @@ a:hover {
   margin: 0 5px;
 }
 .header__contacts .contacts__item {
-  align-self: center;
+  align-self: flex-end;
   line-height: 25.5px;
   font-size: 16px;
 }
@@ -613,81 +613,77 @@ a:hover {
     font-size: 18px;
   }
 }
-.main-last {
+.last {
   width: 100%;
   padding: 0 80px 228px;
 }
-.main-last h2 {
+.last__h2 {
   font-size: 38px;
   line-height: 44.53px;
 }
-.main-last h3 {
+.last__h3 {
   margin-bottom: 92px;
   font-size: 30px;
   line-height: 35.16px;
 }
-.main-last div {
+.last__content {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
 }
-.main-last div figure {
+.last__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 402px;
   margin-bottom: 4rem;
 }
-.main-last div figure img {
+.last__item div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
   margin-bottom: 1rem;
 }
-.main-last div figure .last-icon1 {
-  width: 90px;
-  height: 90px;
-}
-.main-last div figure .last-icon3 {
-  width: 110px;
-  height: 110px;
-}
-.main-last div figure p {
+.last__item p {
   font-size: 26px;
   font-weight: 400;
   line-height: 30.47px;
   text-align: center;
 }
+.last__icon1 {
+  width: 80%;
+}
+.last__icon2 {
+  width: 90%;
+}
+.last__icon3 {
+  width: 100%;
+}
 @media (max-width: 992px) {
-  .main-last {
+  .last {
     padding: 0 12px 50px;
   }
-  .main-last h2 {
+  .last__h2 {
     font-size: 18px;
     line-height: 21.09px;
   }
-  .main-last h3 {
+  .last__h3 {
     margin-bottom: 31.35px;
     font-size: 16px;
     line-height: 18.75px;
   }
-  .main-last div figure {
+  .last__item {
     width: 210px;
     margin-bottom: 3rem;
   }
-  .main-last div figure img {
+  .last__item div {
     width: 74.69px;
     height: 74.69px;
     margin-bottom: 1rem;
   }
-  .main-last div figure .last-icon1 {
-    width: 60px;
-    height: 60px;
-  }
-  .main-last div figure .last-icon3 {
-    width: 100px;
-    height: 100px;
-  }
-  .main-last div figure p {
+  .last__item p {
     font-size: 14px;
     line-height: 16.41px;
   }
@@ -757,4 +753,11 @@ a:hover {
   .footer__insta {
     font-size: 16px;
   }
+}
+
+.copyright {
+  padding: 0.6rem 0;
+  text-align: center;
+  background-color: #1F1E1C;
+  color: gray;
 }
